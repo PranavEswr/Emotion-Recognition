@@ -1,4 +1,4 @@
-# Mtech-Mini-Project-2
+# Facial Emotion Recognition Using CNN
 Aim is to create something that can classify different facial emotions using deep learning technique.
 - ADAM optimizer is used
 
