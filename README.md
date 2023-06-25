@@ -18,11 +18,13 @@ The architecture for the proposed facial emotion recognition model is depicted i
 
 CNN is trained with the emotion image dataset, utilizing Adam as the optimizer and the categorical cross-entropy as the loss function. The model parameters are shown in table below. 
 
-
-
+![Screenshot_2023-06-25-22-17-34-22_e2d5b3f32b79de1d45acd1fad96fbb0f-01 (1)](https://github.com/PranavEswr/Facial-Emotion-Recognition-Using-CNN/assets/91025454/fa436a5f-f101-451f-92a8-e63d204d9390)
 
 Figure below depicts the normalized confusion matrix for the test samples using the proposed DCNN model. The specificity (recall) i.e. the coverage of positive samples shows that most of them are predicted as positive itself except class 1 (happy). 
 Class 0 (angry) and Class 3 (neutral) are having good prediction results. 
+
+![Screenshot_2023-06-25-22-17-41-29_e2d5b3f32b79de1d45acd1fad96fbb0f-01](https://github.com/PranavEswr/Facial-Emotion-Recognition-Using-CNN/assets/91025454/b74e0d29-fccf-4106-86a3-7857a5b5ecbe)
+
 
 # Conclusion
 The model classifies 5 different facial emotions from the image dataset. The model has 
