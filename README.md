@@ -8,6 +8,10 @@ good accuracy. The main focus of this work is to create a Deep Convolutional Neu
 
 The architecture for the proposed facial emotion recognition model is depicted in Figure 1. The model uses two convolution layers with dropouts after each convolution layer. The input image is resized to 32 x 32 and is given to the first convolution layer. The output from the convolution layer, called feature map, is passed through an activation function. The activation function used here is ReLU (Rectified Linear Unit) that makes the negative values zero while the positive values remain the same. This feature map is given to the pooling layer of pool size 2 x 2 to reduce the size without losing any information. Dropout layer is used so as to reduce the overfitting. This process again continues for the next convolution layer as well. Finally, a 2-dimensional array is created with some feature values. Flatten layer is used to convert these 2-dimensional arrays to a single dimensional vector so as to give it as the input of the neural network, represented by the dense layers. Here a two-layer neural network is used, one is input and the other is output. The output layer has 5 units, since 5 classes need to be classified. The activation function used in the output layer is softmax, which produces the probabilistic output for each class. Figure 2 depicts a snapshot of the model summary of the proposed system which is built using the Keras DL Library. 
 
+![Screenshot_2023-06-25-22-16-58-51_e2d5b3f32b79de1d45acd1fad96fbb0f-01](https://github.com/PranavEswr/Facial-Emotion-Recognition-Using-CNN/assets/91025454/bff51aec-9023-4cb9-bc8a-85af0788255b)
+
+
+![E2](https://github.com/PranavEswr/Facial-Emotion-Recognition-Using-CNN/assets/91025454/78b05d58-dda0-452b-b706-c5a7b37604ad)
 
 
 # Results
