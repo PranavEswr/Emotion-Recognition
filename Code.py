@@ -24,11 +24,11 @@ valid = ImageDataGenerator(rescale = 1/255,
                                    horizontal_flip = True)
 
 batch_size  = 32
-picture_size = 64
+picture_size = 32
 
 train_dataset = train.flow_from_directory("splitted_data/train",
                                               target_size = (picture_size,picture_size),
-                                              color_mode = "grayscale",
+                                              color_mode = "rgb",
                                               batch_size=batch_size,
                                               class_mode='categorical',
                                               shuffle=True)
@@ -36,7 +36,7 @@ train_dataset = train.flow_from_directory("splitted_data/train",
 
 valid_dataset = valid.flow_from_directory("splitted_data/val",
                                               target_size = (picture_size,picture_size),
-                                              color_mode = "grayscale",
+                                              color_mode = "rgb",
                                               batch_size=batch_size,
                                               class_mode='categorical',
                                               shuffle=True)
@@ -49,12 +49,12 @@ os.listdir(path)
 ############# Setup our Convolutional Neural Network (CNN) #############
 from keras.optimizers import Adam
 
-no_of_classes = 3
+no_of_classes = 5
 
 model = Sequential()
 
 #1st CNN layer
-model.add(Conv2D(32,(3,3), activation='relu', padding = 'same',input_shape = (64,64,1)))
+model.add(Conv2D(32,(3,3), activation='relu', padding = 'same',input_shape = (30,30,1)))
 model.add(MaxPooling2D(pool_size = (2,2)))
 model.add(Dropout(0.2))
 
@@ -67,11 +67,10 @@ model.add(Dropout (0.2))
 model.add(Flatten())
 
 #Fully connected 1st layer
-model.add(Dense(128,activation='relu'))
+model.add(Dense(256,activation='relu'))
 
 # Fully connected layer 2nd layer
-model.add(Dense(3,activation='softmax'))
-
+model.add(Dense(5,activation='softmax'))
 
 # opt = Adam(lr = 0.01)
 model.compile(optimizer='adam',loss='categorical_crossentropy', metrics=['accuracy'])
@@ -90,7 +89,7 @@ callbacks_list = [checkpoint]
 
 history_adam = model.fit(train_dataset, 
                      steps_per_epoch=2100,
-                     epochs=2,
+                     epochs=11,
                      validation_data = valid_dataset,
                      validation_steps=210,
                      callbacks=callbacks_list)
