@@ -72,6 +72,7 @@ model.add(Dense(256,activation='relu'))
 # Fully connected layer 2nd layer
 model.add(Dense(5,activation='softmax'))
 
+
 # opt = Adam(lr = 0.01)
 model.compile(optimizer='adam',loss='categorical_crossentropy', metrics=['accuracy'])
 model.summary()
